@@ -1,2 +1,0 @@
-serviceClass: com.brainballs.server.client.GreetingService
-path: D5C5EDBBD9F9554CB095EAE1779FF92A.gwt.rpc

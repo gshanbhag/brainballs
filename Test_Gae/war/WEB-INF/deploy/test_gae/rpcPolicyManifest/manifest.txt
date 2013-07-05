@@ -1,2 +1,0 @@
-# Module test_gae
-# RPC service class, partial path of RPC policy file
