@@ -1,0 +1,91 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e2e2e2"
+    android:orientation="vertical"
+    tools:context=".FullscreenActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+    <RelativeLayout
+        android:id="@+id/TitleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:background="#c8c8c8"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="25dp"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:showDividers="beginning|end" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left|center_vertical"
+            android:layout_margin="0dp"
+            android:layout_marginLeft="0dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/bb_logo_transparent" />
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_toRightOf="@+id/imageView1"
+            android:gravity="right|center_vertical"
+            android:keepScreenOn="true"
+            android:paddingRight="5dp"
+            android:text="brain balls"
+            android:textColor="#4775d9"
+            android:textSize="40sp"
+            android:textStyle="normal"
+            android:typeface="monospace" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitXY"
+            android:src="#e2e2e2" />
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/fullscreen_content"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="#e2e2e2" />
+
+    </RelativeLayout>
+
+    <!--
+         This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows.
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#c8c8c8"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+</LinearLayout>
