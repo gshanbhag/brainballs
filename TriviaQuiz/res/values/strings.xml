@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string
-        name="app_name">Been There, Done That!</string>
+        name="app_name">TriviaQuiz</string>
     <string
         name="splash">Splash Screen</string>
     <string

@@ -272,7 +272,7 @@ public class QuizGameActivity extends QuizActivity {
             // Create a Drawable by decoding a stream from a remote URL
             imageUrl = new URL(getQuestionImageUrl(questionNumber));
             Bitmap bitmap = BitmapFactory.decodeStream(imageUrl.openStream());
-            image = new BitmapDrawable(bitmap);
+            image = new BitmapDrawable(getResources(), bitmap);
         } catch (Exception e) {
             Log.e(DEBUG_TAG, "Decoding Bitmap stream failed.");
             image = getResources().getDrawable(R.drawable.noquestion);
