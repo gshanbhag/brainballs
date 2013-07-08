@@ -20,7 +20,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -35,10 +37,30 @@ public class AvatarActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE); 
 		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.avatar);
 		
+		initGreeting();
+		initAvatars();
 		initNextButton();
+	}
+	
+	private void initGreeting() {
+		setContentView(R.layout.avatar);
+		TextView helloString = (TextView) findViewById(R.id.avatar_hellostring);
+		helloString.setText("Hello " + userName);
+	}
+	
+	private void initAvatars() {
+		int[] avatars = {R.id.avatar_kohli, R.id.avatar_dhoni,R.id.avatar_gayle};
+		
+		for (int i=0; i < avatars.length; i++) {
+			ImageView img = (ImageView) findViewById(avatars[i]);
+			img.setOnClickListener(new View.OnClickListener() {
+	            public void onClick(View v) {
+	                //v.getId() will give you the image id
+	            	avatarId = v.getId();
+	            }
+			});
+		}
 	}
 	
 	private void initNextButton() {
@@ -46,9 +68,9 @@ public class AvatarActivity extends BaseActivity {
         Button nextButton = (Button) findViewById(R.id.button1);
         nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	
-                Toast.makeText(AvatarActivity.this, "TODO: Launch Syllabus Activity \r\n[" + userName +", " + email +"]", Toast.LENGTH_LONG).show();
-            }
+            	Toast.makeText(AvatarActivity.this, "TODO: Launch Syllabus Activity \r\n[" 
+            			+ userName +", " + email + ", " + avatarId +"]", 
+            			Toast.LENGTH_LONG).show();}
         });
 	}
 }

@@ -10,6 +10,7 @@ public class BaseActivity extends Activity {
     public static final String DEBUG_TAG = "BB Log";
     
     //TODO: Move this to a fully qualified User class later
-	String userName;
-	String email;
+	static String userName;
+	static String email;
+	static int avatarId;
 }

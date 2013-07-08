@@ -51,19 +51,19 @@
             android:id="@+id/TextView02"
             android:layout_width="100dp"
             android:layout_height="64dp"
-            android:layout_alignBottom="@+id/fullscreen_content"
+            android:layout_alignBottom="@+id/dummy_text"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ImageView01"
             android:keepScreenOn="true"
             android:paddingRight="5dp"
-            android:text="dummy text"
+            android:text="            "
             android:textColor="#4775d9"
             android:textSize="20sp"
             android:textStyle="normal"
             android:typeface="monospace" />
 
         <TextView
-            android:id="@+id/fullscreen_content"
+            android:id="@+id/avatar_hellostring"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_above="@+id/imageView2"
@@ -72,7 +72,6 @@
             android:gravity="right|center_vertical"
             android:keepScreenOn="true"
             android:paddingRight="5dp"
-            android:text="Hello, Giri"
             android:textColor="#404040"
             android:textSize="20sp"
             android:textStyle="normal"
@@ -117,42 +116,59 @@
             android:textSize="20sp" />
 
         <TableLayout
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.02"
-            android:paddingLeft="5dp"
-            android:paddingTop="10dp" >
+            android:gravity="center_horizontal|center_vertical"
+            android:stretchColumns="*" >
 
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:padding="10dp" >
 
                 <ImageView
-                    android:id="@+id/image"
+                    android:id="@+id/avatar_kohli"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
                     android:background="@drawable/image_bg"
-                    android:maxHeight="10dp"
-                    android:maxWidth="10dp"
+                    android:clickable="true"
                     android:src="@drawable/kohli_96" />
+
+                <ImageView
+                    android:id="@+id/avatar_dhoni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@drawable/image_bg"
+                    android:clickable="true"
+                    android:src="@drawable/dhoni_96" />
 
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:padding="10dp" >
+                
+                <ImageView
+                    android:id="@+id/avatar_gayle"
+                    android:layout_width="wrap_content"
+                	android:layout_height="wrap_content"
+                	android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/image_bg"
+                    android:clickable="true"
+                    android:src="@drawable/gayle_96" />
+                
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
             </TableRow>
