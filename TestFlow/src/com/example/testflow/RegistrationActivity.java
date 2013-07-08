@@ -8,6 +8,7 @@ import com.example.testflow.util.SystemUiHider;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences.Editor;
 
 
@@ -30,8 +31,7 @@ import android.widget.Toast;
  * @see SystemUiHider
  */
 public class RegistrationActivity extends BaseActivity {
-	String userName;
-	String email;
+
 	ArrayList<String> emailList;
 
 	@Override
@@ -55,6 +55,8 @@ public class RegistrationActivity extends BaseActivity {
             	userName = nicknameText.getText().toString();
             	
                 Toast.makeText(RegistrationActivity.this, "TODO: Launch Avatar Activity \r\n[" + userName +", " + email +"]", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(RegistrationActivity.this, AvatarActivity.class));
+                RegistrationActivity.this.finish();
             }
         });
 	}

@@ -27,6 +27,7 @@
         </activity>
         
         <activity android:name="RegistrationActivity"></activity>
+        <activity android:name="AvatarActivity"></activity>
     </application>
 
 </manifest>
