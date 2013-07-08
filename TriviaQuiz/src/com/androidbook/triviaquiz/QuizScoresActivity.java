@@ -7,42 +7,49 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.TabHost.TabSpec;
 
 public class QuizScoresActivity extends QuizActivity {
+    /** Called when the activity is first created. */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scores);
+
         // Set up the tabs
         TabHost host = (TabHost) findViewById(R.id.TabHost1);
         host.setup();
+
         // All Scores tab
         TabSpec allScoresTab = host.newTabSpec("allTab");
         allScoresTab.setIndicator(getResources().getString(R.string.all_scores), getResources().getDrawable(
                 android.R.drawable.star_on));
         allScoresTab.setContent(R.id.ScrollViewAllScores);
         host.addTab(allScoresTab);
+
         // Friends Scores tab
         TabSpec friendScoresTab = host.newTabSpec("friendsTab");
         friendScoresTab.setIndicator(getResources().getString(R.string.friends_scores), getResources().getDrawable(
                 android.R.drawable.star_on));
         friendScoresTab.setContent(R.id.ScrollViewFriendScores);
         host.addTab(friendScoresTab);
+
         // Set the default tab
         host.setCurrentTabByTag("allTab");
+
         // Retrieve the TableLayout references
         TableLayout allScoresTable = (TableLayout) findViewById(R.id.TableLayout_AllScores);
         TableLayout friendScoresTable = (TableLayout) findViewById(R.id.TableLayout_FriendScores);
+
         // Give each TableLayout a yellow header row with the column names
         initializeHeaderRow(allScoresTable);
         initializeHeaderRow(friendScoresTable);
+
         XmlResourceParser mockAllScores = getResources().getXml(R.xml.allscores);
         XmlResourceParser mockFriendScores = getResources().getXml(R.xml.friendscores);
         try {
@@ -54,6 +61,7 @@ public class QuizScoresActivity extends QuizActivity {
     }
 
     /**
+     * 
      * Add a header {@code TableRow} to the {@code TableLayout} (styled)
      * 
      * @param scoreTable
@@ -62,8 +70,10 @@ public class QuizScoresActivity extends QuizActivity {
     private void initializeHeaderRow(TableLayout scoreTable) {
         // Create the Table header row
         TableRow headerRow = new TableRow(this);
+
         int textColor = getResources().getColor(R.color.logo_color);
         float textSize = getResources().getDimension(R.dimen.help_text_size);
+
         addTextToRowWithValues(headerRow, getResources().getString(R.string.username), textColor, textSize);
         addTextToRowWithValues(headerRow, getResources().getString(R.string.score), textColor, textSize);
         addTextToRowWithValues(headerRow, getResources().getString(R.string.rank), textColor, textSize);
@@ -82,15 +92,17 @@ public class QuizScoresActivity extends QuizActivity {
      * @throws IOException
      *             Thrown on IO errors reading the XML
      */
-    private void processScores(final TableLayout scoreTable, XmlResourceParser scores) throws XmlPullParserException,
-            IOException {
+    private void processScores(final TableLayout scoreTable, XmlResourceParser scores) throws XmlPullParserException, IOException {
         int eventType = -1;
         boolean bFoundScores = false;
+
         // Find Score records from XML
         while (eventType != XmlResourceParser.END_DOCUMENT) {
             if (eventType == XmlResourceParser.START_TAG) {
+
                 // Get the name of the tag (eg scores or score)
                 String strName = scores.getName();
+
                 if (strName.equals("score")) {
                     bFoundScores = true;
                     String scoreValue = scores.getAttributeValue(null, "score");
@@ -101,6 +113,7 @@ public class QuizScoresActivity extends QuizActivity {
             }
             eventType = scores.next();
         }
+
         // Handle no scores available
         if (bFoundScores == false) {
             final TableRow newRow = new TableRow(this);
@@ -112,8 +125,8 @@ public class QuizScoresActivity extends QuizActivity {
     }
 
     /**
-     * {@code processScores()} helper method -- Inserts a new score {@code
-     * TableRow} in the {@code TableLayout}
+     * 
+     * {@code processScores()} helper method -- Inserts a new score {@code TableRow} in the {@code TableLayout}
      * 
      * @param scoreTable
      *            The {@code TableLayout} to add the score to
@@ -126,8 +139,10 @@ public class QuizScoresActivity extends QuizActivity {
      */
     private void insertScoreRow(final TableLayout scoreTable, String scoreValue, String scoreRank, String scoreUserName) {
         final TableRow newRow = new TableRow(this);
+
         int textColor = getResources().getColor(R.color.title_color);
         float textSize = getResources().getDimension(R.dimen.help_text_size);
+
         addTextToRowWithValues(newRow, scoreUserName, textColor, textSize);
         addTextToRowWithValues(newRow, scoreValue, textColor, textSize);
         addTextToRowWithValues(newRow, scoreRank, textColor, textSize);
@@ -135,8 +150,7 @@ public class QuizScoresActivity extends QuizActivity {
     }
 
     /**
-     * {@code insertScoreRow()} helper method -- Populate a {@code TableRow} with
-     * three columns of {@code TextView} data (styled)
+     * {@code insertScoreRow()} helper method -- Populate a {@code TableRow} with three columns of {@code TextView} data (styled)
      * 
      * @param tableRow
      *            The {@code TableRow} the text is being added to

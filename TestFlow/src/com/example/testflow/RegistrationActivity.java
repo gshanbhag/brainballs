@@ -29,7 +29,7 @@ import android.widget.Toast;
  * 
  * @see SystemUiHider
  */
-public class RegistrationActivity extends Activity {
+public class RegistrationActivity extends BaseActivity {
 	String userName;
 	String email;
 	ArrayList<String> emailList;

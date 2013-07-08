@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/bkgrnd">
     <RelativeLayout
         android:id="@+id/RelativeLayout01"
         android:layout_width="wrap_content"
@@ -49,20 +50,40 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
-            <TextView
-                android:id="@+id/TextView_Nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/settings_nickname"
-                android:textSize="@dimen/help_text_size"
-                android:textStyle="bold"></TextView>
-            <EditText
-                android:id="@+id/EditText_Nickname"
-                android:layout_height="wrap_content"
-                android:maxLength="20"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:maxLines="1"
-                android:inputType="textPersonName"></EditText>
+                android:layout_height="fill_parent"
+                android:gravity="fill">
+                <ImageButton
+                    android:id="@+id/ImageButton_Avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/avatar"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="@dimen/avatar_size"
+                    android:minHeight="@dimen/avatar_size"
+                    android:scaleType="fitXY"></ImageButton>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <TextView
+                        android:id="@+id/TextView_Nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_nickname"
+                        android:textSize="@dimen/help_text_size"
+                        android:textStyle="bold"></TextView>
+                    <EditText
+                        android:id="@+id/EditText_Nickname"
+                        android:layout_height="wrap_content"
+                        android:maxLength="20"
+                        android:layout_width="fill_parent"
+                        android:maxLines="1"
+                        android:inputType="textPersonName"></EditText>
+                </LinearLayout>
+            </LinearLayout>
             <TextView
                 android:id="@+id/TextView_Email"
                 android:layout_width="wrap_content"
