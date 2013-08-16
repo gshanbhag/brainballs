@@ -28,6 +28,8 @@
         
         <activity android:name="RegistrationActivity"></activity>
         <activity android:name="AvatarActivity"></activity>
+        <activity android:name="SyllabusActivity"></activity>
+        <activity android:name="StandardActivity"></activity>
     </application>
 
 </manifest>

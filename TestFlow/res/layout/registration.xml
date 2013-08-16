@@ -115,7 +115,7 @@
             android:typeface="monospace" />
 
         <TextView
-            android:id="@+id/TextView01"
+            android:id="@+id/badge_standard"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.03"

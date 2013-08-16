@@ -16,10 +16,8 @@
     <RelativeLayout
         android:id="@+id/TitleLayout"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_height="120dp"
         android:background="#c8c8c8"
-        android:fadingEdge="vertical"
-        android:fadingEdgeLength="25dp"
         android:orientation="horizontal"
         android:paddingLeft="0dp"
         android:showDividers="beginning|end" >
@@ -49,29 +47,29 @@
 
         <TextView
             android:id="@+id/TextView02"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="64dp"
             android:layout_alignBottom="@+id/dummy_text"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ImageView01"
             android:keepScreenOn="true"
             android:paddingRight="5dp"
-            android:text="            "
+            android:text="  "
             android:textColor="#4775d9"
             android:textSize="20sp"
             android:textStyle="normal"
             android:typeface="monospace" />
 
         <TextView
-            android:id="@+id/avatar_hellostring"
+            android:id="@+id/avatar_name"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_above="@+id/imageView2"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/TextView02"
-            android:gravity="right|center_vertical"
+            android:gravity="right|bottom"
             android:keepScreenOn="true"
-            android:paddingRight="5dp"
+            android:padding="5dp"
             android:textColor="#404040"
             android:textSize="20sp"
             android:textStyle="normal"
@@ -129,7 +127,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:padding="10dp" >
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/avatar_kohli"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -188,13 +186,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="21dp"
-            	android:background="#4775d9"
-            	android:textColor="#e2e2e2"
+                android:background="#4775d9"
                 android:gravity="center_vertical|center_horizontal"
                 android:maxLines="1"
                 android:minWidth="80dp"
                 android:text="Next"
-                android:textSize="20sp" />
+                android:textColor="#e2e2e2"
+                android:textSize="28sp" />
+
         </LinearLayout>
 
     </LinearLayout>

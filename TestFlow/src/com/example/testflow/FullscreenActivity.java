@@ -1,13 +1,10 @@
 package com.example.testflow;
 
-import com.example.testflow.util.SystemUiHider;
-
-
 import android.app.Activity;
-
 import android.os.Bundle;
-
 import android.view.Window;
+
+import com.example.testflow.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

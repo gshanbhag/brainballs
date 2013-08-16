@@ -11,6 +11,9 @@ public class BaseActivity extends Activity {
     
     //TODO: Move this to a fully qualified User class later
 	static String userName;
+	static String userStd = "";
 	static String email;
 	static int avatarId;
+	static int syllabusId;
+	static int standardId;
 }

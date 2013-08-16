@@ -1,29 +1,15 @@
 package com.example.testflow;
 
-import java.util.ArrayList;
-
-import com.example.testflow.util.SystemUiHider;
-
-
-import android.accounts.Account;
-import android.accounts.AccountManager;
-import android.app.Activity;
-import android.content.SharedPreferences.Editor;
-
-
+import android.content.Intent;
 import android.os.Bundle;
-
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.testflow.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -45,8 +31,8 @@ public class AvatarActivity extends BaseActivity {
 	
 	private void initGreeting() {
 		setContentView(R.layout.avatar);
-		TextView helloString = (TextView) findViewById(R.id.avatar_hellostring);
-		helloString.setText("Hello " + userName);
+		TextView helloString = (TextView) findViewById(R.id.avatar_name);
+		helloString.setText("Hello, " + userName);
 	}
 	
 	private void initAvatars() {
@@ -58,6 +44,8 @@ public class AvatarActivity extends BaseActivity {
 	            public void onClick(View v) {
 	                //v.getId() will give you the image id
 	            	avatarId = v.getId();
+	            	//TODO: Visually show the button as selected
+	            	
 	            }
 			});
 		}
@@ -70,7 +58,10 @@ public class AvatarActivity extends BaseActivity {
             public void onClick(View v) {
             	Toast.makeText(AvatarActivity.this, "TODO: Launch Syllabus Activity \r\n[" 
             			+ userName +", " + email + ", " + avatarId +"]", 
-            			Toast.LENGTH_LONG).show();}
+            			Toast.LENGTH_LONG).show();
+            	startActivity(new Intent(AvatarActivity.this, SyllabusActivity.class));
+                AvatarActivity.this.finish();
+            }
         });
 	}
 }

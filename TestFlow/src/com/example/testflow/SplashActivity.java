@@ -2,7 +2,6 @@ package com.example.testflow;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;

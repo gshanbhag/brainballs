@@ -2,18 +2,10 @@ package com.example.testflow;
 
 import java.util.ArrayList;
 
-import com.example.testflow.util.SystemUiHider;
-
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences.Editor;
-
-
 import android.os.Bundle;
-
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -23,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.testflow.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
