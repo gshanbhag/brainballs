@@ -3,6 +3,7 @@ package com.androidbook.triviaquiz;
 import android.app.Activity;
 
 // testing code reviews
+// testing code review - pass #2
 public class QuizActivity extends Activity {
 
     // Game preference values
