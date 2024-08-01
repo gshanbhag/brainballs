@@ -2,6 +2,7 @@ package com.androidbook.triviaquiz;
 
 import android.app.Activity;
 
+// testing code reviews
 public class QuizActivity extends Activity {
 
     // Game preference values
